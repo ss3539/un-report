@@ -3,24 +3,25 @@
     "path": "~/Desktop/software_workshop_files/un-report/code/un_dataanalysis.R",
     "project_path": "code/un_dataanalysis.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "1085576839",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1674051151775.0,
     "source_on_save": false,
     "relative_order": 5,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "41,0",
-        "scrollLine": "34"
+        "cursorPosition": "67,0",
+        "scrollLine": "50",
+        "softWrapLines": "true"
     },
     "folds": "",
-    "lastKnownWriteTime": 1674051117,
+    "lastKnownWriteTime": 1674061687,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1674054488957,
+    "last_content_update": 1674061687711,
     "read_only": false,
     "read_only_alternatives": []
 }
