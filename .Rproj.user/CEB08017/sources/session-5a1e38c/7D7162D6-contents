@@ -1,0 +1,46 @@
+library(tidyverse)
+getwd()
+gapminder_data <- read_csv("data/gapminder_data.csv")
+summarize(gapminder_data, averageLifeExp=mean(lifeExp), medianLifExp=median(lifeExp))
+#Learning to pipe
+
+gapmider_summary <- gapminder_data %>% summarize(averageLifeExp=mean(lifeExp))
+gapmider_summary
+
+#Filtering
+
+gapminder_data %>%
+  filter(year == 1952) %>%
+  summarize(average_gdp=mean(gdpPercap))
+# Using group by
+gapminder_data %>%
+  group_by(year) %>%
+  summarize(average=mean(lifeExp))
+
+gapminder_data %>%
+  group_by(year,continent) %>%
+  summarize(average=mean(lifeExp), error = sd(lifeExp))
+
+#Mutate Function
+gapminder_data %>%
+  mutate(gdp = pop * gdpPercap)
+
+#Mutate a new cloumn with its population in millions
+
+gapminder_data %>%
+  mutate(popmillions = pop/100000)
+
+#select
+gapminder_data %>%
+  select(pop, year)
+
+gapminder_data %>%
+  select(-continent)
+
+#Pivot_wider
+
+gapminder_data %>%
+  select(country, continent, year, lifeExp) %>%
+  pivot_wider(names_from = year, values_from = lifeExp )
+
+

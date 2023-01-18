@@ -1,0 +1,81 @@
+# Analyze life expectancy and CO2 emissions versus population with gapminder
+# Date: Jan 17th, 2023
+#Author: Saadlee
+#Load in packages necessary for analysis
+install.packages("viridis")
+install.packages("ggprism")
+library(tidyverse)
+library(readr)
+library(viridis)
+library(ggprism)
+
+# Read in data for analysis
+gapminder_1997 <- read_csv("gapminder_1997.csv")
+
+# Plotting data for visualization
+
+ggplot(data = gapminder_1997) +
+  aes(x = gdpPercap) +
+  aes(y = lifeExp) +
+  labs(x = "GDP Per Capita" , y = "Life Expentancy (yrs)") +
+  geom_point() +
+  labs(title = "Do people in wealthy countries live longer?") +
+  aes(colour = continent) +
+  scale_color_brewer(palette = "Set1") +
+  aes(size = pop/1000000) +
+  labs(size = "Population (in millions)") +
+  aes (shape = continent)
+#short handed ggplot 
+ggplot(data = gapminder_1997,
+       aes(x = gdpPercap,y = lifeExp, colour = continent, shape = continent, size = pop)) +
+       labs (x = "GDP Per Capita" , y = "Life Expentancy (yrs)" , title = "Do people in wealthy countries live longer?", size = "Population (in millions)")+
+       geom_point()
+
+# Read in all data from gapmider_data
+
+gapminder_data <- read_csv("gapminder_data.csv")
+View (gapminder_data)
+dim(gapminder_data)
+head(gapminder_data)
+tail(gapminder_data)
+
+# Challenge: Predicting output
+ggplot(data = gapminder_1997) +
+  aes(x=continent, y=lifeExp) +
+  geom_violin( color = "pink") +
+  geom_jitter(aes(size =pop))
+# learn about data
+str(gapminder_data)
+
+#histogram
+ggplot(data = gapminder_1997) +
+  aes(x=lifeExp) +
+  geom_histogram(bins = 20) +
+  theme_prism()
+
+ggplot(data = gapminder_1997) +
+  aes(x = gdpPercap , y = lifeExp) +
+  geom_point() +
+  facet_grid(rows = vars(continent))
+
+ggsave ("aweasome_plot.jpg", width = 6 , height = 4)
+
+RColorBrewer::display.brewer.all()
+ 
+name <- "Ben"
+name
+age <- 26
+age
+name <- "Harry Potter"
+name
+read_csv(file = "gapminder_1997.csv")
+sum(5,6)
+round(3.1415)
+round(3.1415,3)
+round(x = 3.1415)
+round(x = 3.1415, digits = 2)
+round(digits = 2, x = 3.1415)
+round(2, 3.1415)
+library("readxl")
+plasmid <- read_excel("list_True_Tn6022_plasmid.xls")
+str(plasmid)
